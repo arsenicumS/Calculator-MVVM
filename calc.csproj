@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\CloseButton.cs" />
     <Compile Include="ViewModel\Command\ClearCommand.cs" />
     <Compile Include="ViewModel\Command\NamberCommand.cs" />
     <Compile Include="ViewModel\Command\OperationCommand.cs" />

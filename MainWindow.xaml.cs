@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace calc
 {
@@ -11,5 +12,11 @@ namespace calc
         {
             InitializeComponent();
         }
+        private void WindowMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+                
+
     }
 }
