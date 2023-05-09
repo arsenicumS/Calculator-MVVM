@@ -123,7 +123,7 @@ namespace calc
         }
         private void UpdateRezult() 
         {
-            if (Operator1 != null && Operator2 != null)
+            if (Operator1 != "0" && Operator2 != "0")
                 Rezult = model.ExecutOperation().ToString();
         }
 

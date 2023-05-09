@@ -8,20 +8,7 @@
         Title="MainWindow" Height="420" Width="270">
     <Grid>
         <Grid.Resources>
-            <local:ViewModel x:Key="vm"/>
-            <Style TargetType="Button" x:Key="namber">
-                <Setter Property="Margin" Value="5"/>
-                <Setter Property="FontSize" Value="25"/>
-                <Setter Property="Command" Value="{Binding NamberCommand ,Source={StaticResource vm}}"/>
-                <Setter Property="CommandParameter" Value="{Binding Content,RelativeSource={RelativeSource self}}"/>
-            </Style>
-            <Style TargetType="Button" x:Key="operation">
-                <Setter Property="Margin" Value="10"/>
-                <Setter Property="FontSize" Value="25"/>
-                <Setter Property="Command" Value="{Binding OperationCommand ,Source={StaticResource vm}}"/>
-                <Setter Property="CommandParameter" Value="{Binding Content,RelativeSource={RelativeSource self}}"/>
-
-            </Style>
+            <local:ViewModel x:Key="vm"/> 
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="2.25*"/>
@@ -39,37 +26,39 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.ColumnSpan="4">
-            <Label Content="{Binding Rezult ,Source={StaticResource vm}}"/>
-            <Label Content="{Binding Operator1, Source={StaticResource vm}}"/>
-            <Label Content="{Binding Operation, Source={StaticResource vm}}"/>
-            <Label Content="{Binding Operator2, Source={StaticResource vm}}"/>
+            <Label Style="{DynamicResource Lab1}" Content="{Binding Rezult, Source={StaticResource vm}}"/>
+            <Label Style="{DynamicResource Lab1}" Content="{Binding Operator1, Source={StaticResource vm}}"/>
+            <Label Style="{DynamicResource Lab1}" Content="{Binding Operation, Source={StaticResource vm}}"/>
+            <Label Style="{DynamicResource Lab1}" Content="{Binding Operator2, Source={StaticResource vm}}"/>
             
         </StackPanel>
 
-        <Button Grid.Row="1" Grid.Column="0" Content=""/>
-        <Button Grid.Row="1" Grid.Column="1" Content=""/>
-        <Button Grid.Row="1" Grid.Column="2" Content=""/>
-        <Button Grid.Row="1" Grid.Column="3" Content="C" Command="{Binding ClearCommand, Source={StaticResource vm}}"/>
+        <Button Grid.Row="1" Grid.Column="0" Content="" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="" Style="{DynamicResource b2}"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="" Style="{DynamicResource b2}"/>
+        <Button Grid.Row="1" Grid.Column="3" Content="C" 
+                Style="{DynamicResource b2}" 
+                Command="{Binding ClearCommand, Source={StaticResource vm}}"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Content="7" Style="{StaticResource namber}"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="8" Style="{StaticResource namber}"/>
-        <Button Grid.Row="2" Grid.Column="2" Content="9" Style="{StaticResource namber}"/>
-        <Button Grid.Row="2" Grid.Column="3" Content="+" Style="{StaticResource operation}"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="7" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="8" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="9" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="2" Grid.Column="3" Content="+" Style="{DynamicResource b2}"/>
 
-        <Button Grid.Row="3" Grid.Column="0" Content="4" Style="{StaticResource namber}"/>
-        <Button Grid.Row="3" Grid.Column="1" Content="5" Style="{StaticResource namber}"/>
-        <Button Grid.Row="3" Grid.Column="2" Content="6" Style="{StaticResource namber}"/>
-        <Button Grid.Row="3" Grid.Column="3" Content="-" Style="{StaticResource operation}"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="4" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="5" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="3" Grid.Column="2" Content="6" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="3" Grid.Column="3" Content="-" Style="{DynamicResource b2}"/>
 
-        <Button Grid.Row="4" Grid.Column="0" Content="1" Style="{StaticResource namber}"/>
-        <Button Grid.Row="4" Grid.Column="1" Content="2" Style="{StaticResource namber}"/>
-        <Button Grid.Row="4" Grid.Column="2" Content="3" Style="{StaticResource namber}"/>
-        <Button Grid.Row="4" Grid.Column="3" Content="*" Style="{StaticResource operation}"/>
+        <Button Grid.Row="4" Grid.Column="0" Content="1" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="4" Grid.Column="1" Content="2" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="4" Grid.Column="2" Content="3" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="4" Grid.Column="3" Content="*" Style="{DynamicResource b2}"/>
 
-        <Button Grid.Row="5" Grid.Column="0" Content=""/>
-        <Button Grid.Row="5" Grid.Column="1" Content="0" Style="{StaticResource namber}"/>
-        <Button Grid.Row="5" Grid.Column="2" Content="."/>
-        <Button Grid.Row="5" Grid.Column="3" Content="/" Style="{StaticResource operation}"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="" Style="{DynamicResource b2}"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="0" Style="{DynamicResource b1}"/>
+        <Button Grid.Row="5" Grid.Column="2" Content="." Style="{DynamicResource b2}"/>
+        <Button Grid.Row="5" Grid.Column="3" Content="/" Style="{DynamicResource b2}"/>
 
 
 
