@@ -22,7 +22,7 @@ namespace calc
         public string Operation 
         { get { return _operation; } 
             set 
-            {
+            {                
                 _operation = value;
                
             } 
@@ -32,7 +32,7 @@ namespace calc
         public float Operator1 
         { get {return _operator1; } 
             set 
-            {
+            {   
                 _operator1 = value;
                
             }
@@ -67,15 +67,21 @@ namespace calc
         {
             _rezult = _operator1 / _operator2;
         }
-
+        private void Percent()
+        {
+            _rezult = 100 * _operator2/_operator1;
+        }
         public float ExecutOperation() 
         {
             if (_operation == "+")  Summ();
             if (_operation == "-") Subtraction();
             if (_operation == "*") Multiply();
             if (_operation == "/") Division();
+            if (_operation == "%") Percent();
             return Rezult;
             
         }
+
+       
     }
 }
